@@ -24,7 +24,7 @@ public class LinkedList<E> extends AbstractList<E> {
                 sb.append("null");
             }
 
-            sb.append("_").append(element).append("_");
+            sb.append("->").append(element).append("->");
 
             if (next != null) {
                 sb.append(next.element);

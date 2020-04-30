@@ -4,15 +4,26 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        testMutableArray();
-//        ArrayList
-        System.out.println("Hello World!");
+        testLinkedList();
+//        testMutableArray();
+        NSLog("Hello World!");
+    }
+
+    private static void NSLog(Object x) {
+        System.out.println(x);
+    }
+    private static  void testLinkedList() {
+        List<Integer> list = new LinkedList<>();
+        list.add(20);
+        list.add(0, 10);
+        list.add(30);
+        list.add(list.size(), 40);
+        NSLog(list);
     }
 
     private static void testMutableArray() {
         NSMutableArray<Person> array = new NSMutableArray<Person>();
     }
-
 
     private static void testFibonacci() {
         fibonacci(46);
@@ -22,14 +33,14 @@ public class Main {
         TimeTool.check("fib1", new TimeTool.Task() {
             @Override
             public void execute() {
-                System.out.println(Fibonacci.fib1(n));
+                NSLog(Fibonacci.fib1(n));
             }
         });
 
         TimeTool.check("fib2", new TimeTool.Task() {
             @Override
             public void execute() {
-                System.out.println(Fibonacci.fib2(n));
+                NSLog(Fibonacci.fib2(n));
             }
         });
     }
