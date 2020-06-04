@@ -1,4 +1,4 @@
-package com.SaiDiCaprio;
+package 数据结构.链表;
 
 public interface List<E> {
     static final int ELEMENT_NOT_FOUND = -1;

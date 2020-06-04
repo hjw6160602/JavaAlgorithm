@@ -1,4 +1,4 @@
-package com.SaiDiCaprio;
+package 数据结构.链表;
 
 public class LinkedList<E> extends AbstractList<E> {
     private Node<E> first;
@@ -8,6 +8,7 @@ public class LinkedList<E> extends AbstractList<E> {
         E element;
         Node<E> prev;
         Node<E> next;
+
         public Node(Node<E> prev, E element, Node<E> next) {
             this.prev = prev;
             this.element = element;

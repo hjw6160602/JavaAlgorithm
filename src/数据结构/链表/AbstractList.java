@@ -1,4 +1,4 @@
-package com.SaiDiCaprio;
+package 数据结构.链表;
 
 public abstract class AbstractList<E> implements List<E> {
     /** 元素的数量 */
