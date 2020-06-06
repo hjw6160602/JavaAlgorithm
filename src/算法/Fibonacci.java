@@ -1,15 +1,17 @@
 package 算法;
 
+import 工具类.TimeTool;
+
 public class Fibonacci {
 
-    public static  int fib1(int n) {
+    private static  int fib1(int n) {
         if (n <= 1) {
             return n;
         }
         return  fib1(n - 1) + fib1(n - 2);
     }
 
-    public  static int fib2(int n) {
+    private static int fib2(int n) {
         if (n <= 1) {
             return n;
         }
@@ -21,5 +23,29 @@ public class Fibonacci {
             second = sum;
         }
         return second;
+    }
+
+    private static void NSLog(Object x) {
+        System.out.println(x);
+    }
+
+    public static void TestFibonacci(int n) {
+        fibonacci(n);
+    }
+
+    private static void fibonacci(int n) {
+        TimeTool.check("fib1", new TimeTool.Task() {
+            @Override
+            public void execute() {
+                NSLog(Fibonacci.fib1(n));
+            }
+        });
+
+        TimeTool.check("fib2", new TimeTool.Task() {
+            @Override
+            public void execute() {
+                NSLog(Fibonacci.fib2(n));
+            }
+        });
     }
 }

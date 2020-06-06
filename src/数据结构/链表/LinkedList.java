@@ -136,4 +136,17 @@ public class LinkedList<E> extends AbstractList<E> {
         string.append("]");
         return string.toString();
     }
+
+    private static void NSLog(Object x) {
+        System.out.println(x);
+    }
+
+    public static void TestLinkedList() {
+        List<Integer> list = new LinkedList<>();
+        list.add(20);
+        list.add(0, 10);
+        list.add(30);
+        list.add(list.size(), 40);
+        NSLog(list);
+    }
 }

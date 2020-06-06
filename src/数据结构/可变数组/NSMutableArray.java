@@ -1,5 +1,7 @@
 package 数据结构.可变数组;
 
+import 实体类.Person;
+
 @SuppressWarnings("unchecked")
 public class NSMutableArray<E> {
     /** 元素的数量 */
@@ -168,5 +170,13 @@ public class NSMutableArray<E> {
         }
         string.append("]");
         return string.toString();
+    }
+
+    private static void NSLog(Object x) {
+        System.out.println(x);
+    }
+
+    public static void TestMutableArray() {
+        NSMutableArray<Person> array = new NSMutableArray<Person>();
     }
 }
