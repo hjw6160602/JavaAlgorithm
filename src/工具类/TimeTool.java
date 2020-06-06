@@ -1,4 +1,4 @@
-package 数据结构.链表;
+package 工具类;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

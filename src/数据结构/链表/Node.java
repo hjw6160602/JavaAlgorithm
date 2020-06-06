@@ -4,14 +4,13 @@ public class Node<E> {
     E element;
     Node<E> prev;
     Node<E> next;
-
+    // 构造函数
     public Node(Node<E> prev, E element, Node<E> next) {
         this.prev = prev;
         this.element = element;
         this.next = next;
     }
 
-    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
 

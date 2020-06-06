@@ -1,4 +1,4 @@
-package 数据结构.链表;
+package 数据结构.可变数组;
 
 @SuppressWarnings("unchecked")
 public class NSMutableArray<E> {

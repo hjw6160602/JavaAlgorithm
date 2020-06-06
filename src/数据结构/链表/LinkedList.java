@@ -25,6 +25,7 @@ public class LinkedList<E> extends AbstractList<E> {
     }
 
     @Override
+    /** 添加链表中指定下标所对应的元素 */
     public void add(int index, E element) {
         rangeCheckForAdd(index);
 
@@ -55,6 +56,7 @@ public class LinkedList<E> extends AbstractList<E> {
     }
 
     @Override
+    /** 删除链表中指定下标所对应的元素 */
     public E remove(int index) {
         rangeCheck(index);
 
@@ -79,6 +81,7 @@ public class LinkedList<E> extends AbstractList<E> {
     }
 
     @Override
+    /** 查找链表中指定下标所对应的元素 */
     public int indexOf(E element) {
         Node<E> node = first;
         if (element == null) {
@@ -116,6 +119,7 @@ public class LinkedList<E> extends AbstractList<E> {
     }
 
     @Override
+    /** 打印链表中的所有元素 */
     public String toString() {
         StringBuilder string = new StringBuilder();
         string.append("size=").append(size).append(", [");

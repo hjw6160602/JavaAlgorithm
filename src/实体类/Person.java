@@ -1,4 +1,4 @@
-package 数据结构.链表;
+package 实体类;
 
 import java.util.Objects;
 
