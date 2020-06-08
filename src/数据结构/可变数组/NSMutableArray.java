@@ -3,7 +3,7 @@ package 数据结构.可变数组;
 import 实体类.Person;
 
 @SuppressWarnings("unchecked")
-public class NSMutableArray<E> {
+public class NSMutableArray<E> implements List {
     /** 元素的数量 */
     private int size;
     /** 所有的元素 */
