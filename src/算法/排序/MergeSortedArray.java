@@ -5,7 +5,7 @@
  * Copyright © 2020 SaiDiCaprio. All rights reserved.
  */
 
-package 算法;
+package 算法.排序;
 
 public class MergeSortedArray {
     class Solution {

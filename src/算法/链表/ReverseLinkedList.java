@@ -5,7 +5,7 @@
  * Copyright © 2020 SaiDiCaprio. All rights reserved.
  */
 
-package 算法;
+package 算法.链表;
 
 public class ReverseLinkedList {
     //    Definition for singly-linked list.

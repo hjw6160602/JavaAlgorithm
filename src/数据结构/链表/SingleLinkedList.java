@@ -1,6 +1,12 @@
+/**
+ * SingleLinkedList.java
+ * Created by SaiDiCaprio on 2020/6/10.
+ * Copyright © 2020 SaiDiCaprio. All rights reserved.
+ */
+
 package 数据结构.链表;
 
-public class LinkedList<E> extends AbstractList<E> {
+public class SingleLinkedList<E> extends AbstractList<E> {
     private Node<E> first;
     private Node<E> last;
 
@@ -142,7 +148,7 @@ public class LinkedList<E> extends AbstractList<E> {
     }
 
     public static void TestLinkedList() {
-        List<Integer> list = new LinkedList<>();
+        List<Integer> list = new SingleLinkedList<>();
         list.add(20);
         list.add(0, 10);
         list.add(30);

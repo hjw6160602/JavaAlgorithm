@@ -1,3 +1,9 @@
+/**
+ * TimeTool.java
+ * Created by SaiDiCaprio on 2020/6/1.
+ * Copyright © 2020 SaiDiCaprio. All rights reserved.
+ */
+
 package 工具类;
 
 import java.text.SimpleDateFormat;

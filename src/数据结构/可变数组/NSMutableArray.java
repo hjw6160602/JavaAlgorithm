@@ -1,9 +1,15 @@
+/**
+ * NSMutableArray.java
+ * Created by SaiDiCaprio on 2020/6/1.
+ * Copyright © 2020 SaiDiCaprio. All rights reserved.
+ */
+
 package 数据结构.可变数组;
 
 import 实体类.Person;
 
 @SuppressWarnings("unchecked")
-public class NSMutableArray<E> implements List {
+public class NSMutableArray<E> {
     /** 元素的数量 */
     private int size;
     /** 所有的元素 */
