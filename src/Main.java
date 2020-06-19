@@ -4,11 +4,13 @@
  * Copyright © 2020 SaiDiCaprio. All rights reserved.
  */
 
+import 数据结构.二叉树.BinarySearchTree;
 import 数据结构.链表.*;
 
 public class Main {
     public static void main(String[] args) {
 //        Fibonacci.TestFibonacci(46);
         SingleLinkedList.TestLinkedList();
+        BinarySearchTree.TestBinarySearchTree();
     }
 }
