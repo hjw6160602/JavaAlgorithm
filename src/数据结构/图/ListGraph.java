@@ -79,14 +79,60 @@ public class ListGraph<V, E> implements Graph<V, E> {
         edges.add(edge);
     }
 
+    // 删除一个顶点
     @Override
-    public void removeVertex(Object o) {
+    public void removeVertex(V v) {
+        // 如果对应的key是存在的 java会把删除掉的key的value返回
+        Vertex<V, E>vertex = vertices.remove(v);
+        if (vertex == null) return;
+        /**
+        vertex.outEdges.forEach((Edge<V, E> edge) -> {
+            // 一边遍历一边删除 有问题
+            removeEdge(edge.from.value, edge.to.value);
+        });
+
+        vertex.inEdges.forEach((Edge<V, E> edge) -> {
+            // 一边遍历一边删除 有问题
+            removeEdge(edge.from.value, edge.to.value);
+        }); */
+
+        // 迭代器
+        for (Iterator<Edge<V, E>> iterator = vertex.outEdges.iterator(); iterator.hasNext();) {
+            Edge<V, E> edge = iterator.next();
+            // 找到到达顶点的 所有进入边集合 并删除对应的边
+            edge.to.inEdges.remove(edge);
+            // 将当前遍历到的元素edge从集合vertex.outEdges中删除
+            iterator.remove();
+            edges.remove(edge);
+        }
+
+        for (Iterator<Edge<V, E>> iterator = vertex.inEdges.iterator(); iterator.hasNext();) {
+            Edge<V, E> edge = iterator.next();
+            // 找到到达顶点的 所有进入边集合 并删除对应的边
+            edge.from.outEdges.remove(edge);
+            // 将当前遍历到的元素edge从集合vertex.inEdges中删除
+            iterator.remove();
+            edges.remove(edge);
+        }
 
     }
 
+    // 删除一条边
     @Override
     public void removeEdge(Object from, Object to) {
 
+        Vertex<V, E> fromVertex = vertices.get(from);
+        if (fromVertex == null) return;
+
+        Vertex<V, E> toVertex = vertices.get(to);
+        if (toVertex == null) return;
+
+        Edge<V, E> edge = new Edge<>(fromVertex, toVertex);
+        // 先尝试去删一下 如果成功就证明确实存在这条边
+        if (fromVertex.outEdges.remove(edge)) {
+            toVertex.inEdges.remove(edge);
+            edges.remove(edge);
+        }
     }
 
     // 顶点
@@ -159,12 +205,21 @@ public class ListGraph<V, E> implements Graph<V, E> {
 
     // 打印方法
     public void print() {
+        System.out.println("【顶点】");
         vertices.forEach((V v, Vertex<V, E> vertex) -> {
-            System.out.println(v);
-            System.out.println(vertex.outEdges);
-            System.out.println(vertex.inEdges);
-        });
+            System.out.println("顶点：" + v);
+            if (vertex.outEdges.size() > 0) {
+                System.out.println("====出去的边====");
+                System.out.println(vertex.outEdges);
+            }
 
+            if (vertex.inEdges.size() > 0) {
+                System.out.println("====进来的边====");
+                System.out.println(vertex.inEdges);
+            }
+
+        });
+        System.out.println("【图中的所有边】");
         edges.forEach((Edge<V, E> edge) -> {
             System.out.println(edge);
         });
