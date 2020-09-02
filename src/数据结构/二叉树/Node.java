@@ -7,10 +7,10 @@
 package 数据结构.二叉树;
 
 public class Node<E> {
-    E element;
-    Node<E> left;
-    Node<E> right;
-    Node<E> parent;
+    public E element;
+    public Node<E> left;
+    public Node<E> right;
+    public Node<E> parent;
     public Node(E element, Node<E> parent) {
 
     }

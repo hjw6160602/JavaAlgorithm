@@ -4,8 +4,9 @@
  * Copyright © 2020 SaiDiCaprio. All rights reserved.
  */
 
-package 数据结构.二叉树;
+package 数据结构.二叉树.二叉搜索树;
 
+import 数据结构.二叉树.Node;
 import 数据结构.二叉树.Printer.BinaryTreeInfo;
 import java.util.Comparator;
 import java.lang.Comparable;
@@ -57,16 +58,28 @@ public class BinarySearchTree<E> implements BinaryTreeInfo {
         }
         size++;
     }
+
     // 查 前序遍历
     public void preOrder(Visitor<E> visitor) {
+        if (visitor == null) {
+            return;
+        }
         preOrderTraversal(root, visitor);
     }
+
     // 中 前序遍历
     public void inOrder(Visitor<E> visitor) {
+        if (visitor == null) {
+            return;
+        }
         inOrderTraversal(root, visitor);
     }
+
     // 后 前序遍历
     public void postOrder(Visitor<E> visitor){
+        if (visitor == null) {
+            return;
+        }
         postOrderTraversal(root, visitor);
     }
 
@@ -76,17 +89,17 @@ public class BinarySearchTree<E> implements BinaryTreeInfo {
 
     // 前序遍历
     private void preOrderTraversal(Node<E> node, Visitor<E> visitor) {
-        if (node == null || visitor == null) {
+        if (node == null || visitor.stop) {
             return;
         }
-        visitor.visit(node.element);
+        visitor.stop = visitor.visit(node.element);
         preOrderTraversal(node.left, visitor);
         preOrderTraversal(node.right, visitor);
     }
 
     // 中序遍历
     private void inOrderTraversal(Node<E> node, Visitor<E> visitor) {
-        if (node == null || visitor == null) {
+        if (node == null) {
             return;
         }
         visitor.visit(node.element);
@@ -97,7 +110,7 @@ public class BinarySearchTree<E> implements BinaryTreeInfo {
 
     // 后序遍历
     private void postOrderTraversal(Node<E> node, Visitor<E> visitor) {
-        if (node == null || visitor == null) {
+        if (node == null) {
             return;
         }
         visitor.visit(node.element);
@@ -124,8 +137,12 @@ public class BinarySearchTree<E> implements BinaryTreeInfo {
     }
 
     // 访问器
-    public static interface Visitor<E> {
-        void visit(E element);
+    public abstract static class Visitor<E> {
+        boolean stop;
+
+        boolean visit(E element) {
+            return true;
+        }
     }
 
     /**
