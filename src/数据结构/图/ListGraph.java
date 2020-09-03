@@ -205,21 +205,18 @@ public class ListGraph<V, E> implements Graph<V, E> {
 
     // 打印方法
     public void print() {
-        System.out.println("【顶点】");
         vertices.forEach((V v, Vertex<V, E> vertex) -> {
-            System.out.println("顶点：" + v);
+            System.out.println("\n顶点：" + v);
             if (vertex.outEdges.size() > 0) {
-                System.out.println("====出去的边====");
-                System.out.println(vertex.outEdges);
+                System.out.println("出去的边" + vertex.outEdges);
             }
 
             if (vertex.inEdges.size() > 0) {
-                System.out.println("====进来的边====");
-                System.out.println(vertex.inEdges);
+                System.out.println("进来的边" + vertex.inEdges);
             }
-
         });
-        System.out.println("【图中的所有边】");
+
+        System.out.println("\n========【图中的所有边】========");
         edges.forEach((Edge<V, E> edge) -> {
             System.out.println(edge);
         });

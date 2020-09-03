@@ -9,7 +9,7 @@ package 数据结构.图;
 public class TestListGraph {
 
     // 测试用例
-    public static void testListGraph() {
+    public static void testDirectionListGraph() {
         ListGraph<String, Integer> graph = new ListGraph<>();
         graph.addEdge("v1", "v0", 9);
         graph.addEdge("v1", "v2", 3);
@@ -22,4 +22,22 @@ public class TestListGraph {
         graph.removeVertex("v0");
         graph.print();
     }
+
+    public static void testNoDirectionListGraph() {
+        ListGraph<String, Integer> graph = new ListGraph<>();
+        graph.addEdge("v0", "v2");
+        graph.addEdge("v2", "v0");
+
+        graph.addEdge("v0", "v3");
+        graph.addEdge("v3", "v0");
+
+        graph.addEdge("v1", "v2");
+        graph.addEdge("v2", "v1");
+
+        graph.addEdge("v2", "v3");
+        graph.addEdge("v3", "v2");
+
+        graph.print();
+    }
+
 }

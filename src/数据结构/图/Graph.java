@@ -19,10 +19,12 @@ public interface Graph<V, E> {
     void  addEdge(V from, V to);
     // 添加有权重边
     void  addEdge(V from, V to, E weight);
+
     // 删除顶点
     void removeVertex(V v);
     // 删除边
     void removeEdge(V from, V to);
+
 
 
 }
