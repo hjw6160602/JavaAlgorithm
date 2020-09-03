@@ -203,6 +203,49 @@ public class ListGraph<V, E> implements Graph<V, E> {
         }
     }
 
+    @Override
+    public void bfs(V begin) {
+        Vertex beginVertex = vertices.get(begin);
+        if (beginVertex == null) return;
+
+        Set<Vertex> visitedVertices = new HashSet<>();
+        // 经典广度优先搜索的队列存储节点
+        Queue<Vertex> queue = new LinkedList<>();
+        queue.offer(beginVertex);
+        visitedVertices.add(beginVertex);
+
+        while (!queue.isEmpty()) {
+            Vertex<V, E> vertex = queue.poll();
+            System.out.println(vertex);
+
+            for (Edge<V, E> edge: vertex.outEdges) {
+                if (visitedVertices.contains(edge.to)) {
+                    continue;
+                }
+                queue.offer(edge.to);
+                visitedVertices.add(edge.to);
+            }
+        }
+    }
+
+    @Override
+    public void dfs(V begin) {
+        Vertex beginVertex = vertices.get(begin);
+        if (beginVertex == null) return;
+
+        Set<Vertex> visitedVertices = new HashSet<>();
+        _dfs(beginVertex, visitedVertices);
+    }
+
+    private void _dfs(Vertex<V, E> vertex, Set<Vertex> visitedVertices) {
+        System.out.println(vertex.value);
+        visitedVertices.add(vertex);
+        for (Edge edge: vertex.outEdges) {
+            if (visitedVertices.contains((edge.to))) continue;
+            _dfs(edge.to, visitedVertices);
+        }
+    }
+
     // 打印方法
     public void print() {
         vertices.forEach((V v, Vertex<V, E> vertex) -> {

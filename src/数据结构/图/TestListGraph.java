@@ -19,8 +19,10 @@ public class TestListGraph {
         graph.addEdge("v0", "v4", 6);
 
 //        graph.removeEdge("v0", "v4");
-        graph.removeVertex("v0");
-        graph.print();
+//        graph.removeVertex("v0");
+
+        graph.bfs("v1");
+//        graph.print();
     }
 
     public static void testNoDirectionListGraph() {
@@ -37,7 +39,8 @@ public class TestListGraph {
         graph.addEdge("v2", "v3");
         graph.addEdge("v3", "v2");
 
-        graph.print();
+        graph.bfs("v1");
+//        graph.print();
     }
 
 }
