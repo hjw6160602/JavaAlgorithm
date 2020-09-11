@@ -13,6 +13,7 @@ public class Main {
 //        Fibonacci.TestFibonacci(46);
 //        SingleLinkedList.TestLinkedList();
 //        BinarySearchTree.TestBinarySearchTree();
-        TestListGraph.testDirectionListGraph();
+//        TestListGraph.testDirectionListGraph();
+        TestListGraph.texstMst();
     }
 }

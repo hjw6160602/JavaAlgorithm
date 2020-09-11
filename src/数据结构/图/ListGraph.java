@@ -246,6 +246,31 @@ public class ListGraph<V, E> implements Graph<V, E> {
         }
     }
 
+    @Override
+    public Set<EdgeInfo<V, E>> mst() {
+        return prim();
+    }
+
+    // Prim 算法获取最小生成树
+    private Set<EdgeInfo<V, E>> prim() {
+        // Hashmap的数据不是按照添加顺序的 next可以理解为随机拿到一个
+        Iterator<Vertex<V, E>> it = vertices.values().iterator();
+        if (!it.hasNext()) {
+            return null;
+        }
+
+        Vertex<V, E> vertex = it.next();
+        System.out.println(vertex);
+
+        Set<EdgeInfo<V, E>> edgeInfos = new HashSet<>();
+        return edgeInfos;
+    }
+
+    // Kruscal 算法获取最小生成树
+    private Set<EdgeInfo<V, E>> kruskal() {
+        return null;
+    }
+
     // 打印方法
     public void print() {
         vertices.forEach((V v, Vertex<V, E> vertex) -> {

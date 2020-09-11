@@ -6,6 +6,9 @@
 
 package 数据结构.图;
 
+import java.util.Set;
+import 数据结构.链表.List;
+
 public interface Graph<V, E> {
     // 边的条数
     int edgeSize();
@@ -29,6 +32,33 @@ public interface Graph<V, E> {
     void bfs(V begin);
     // 深度优先搜索
     void dfs(V begin);
+
+    // 最小生成树
+    Set<EdgeInfo<V, E>> mst();
+
+    // 拓扑排序
+//    List<V> topologicalSort();
+
+    interface VerTexVisitor<V> {
+        boolean visit(V v);
+    }
+
+    class EdgeInfo<V, E> {
+        // 起点
+        V from;
+        // 终点
+        V to;
+        // 权值
+        E weight;
+
+        public EdgeInfo(V from, V to, E weight) {
+            this.from = from;
+            this.to = to;
+            this.weight = weight;
+        }
+    }
+
+
 
 
 }

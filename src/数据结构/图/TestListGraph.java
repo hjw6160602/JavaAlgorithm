@@ -6,6 +6,8 @@
 
 package 数据结构.图;
 
+import 数据结构.链表.List;
+
 public class TestListGraph {
 
     // 测试用例
@@ -41,6 +43,11 @@ public class TestListGraph {
 
         graph.bfs("v1");
 //        graph.print();
+    }
+
+    public static void texstMst() {
+        Graph<Object, Double> grap = new ListGraph<>();
+        grap.mst();
     }
 
 }
