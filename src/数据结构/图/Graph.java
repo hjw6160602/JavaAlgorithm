@@ -45,20 +45,40 @@ public interface Graph<V, E> {
 
     class EdgeInfo<V, E> {
         // 起点
-        V from;
+        private V from;
         // 终点
-        V to;
+        private V to;
         // 权值
-        E weight;
+        private E weight;
 
         public EdgeInfo(V from, V to, E weight) {
             this.from = from;
             this.to = to;
             this.weight = weight;
         }
+
+        public V getFrom() {
+            return from;
+        }
+
+        public V getTo() {
+            return to;
+        }
+
+        public E getWeight() {
+            return weight;
+        }
+
+        public void setFrom(V from) {
+            this.from = from;
+        }
+
+        public void setTo(V to) {
+            this.to = to;
+        }
+
+        public void setWeight(E weight) {
+            this.weight = weight;
+        }
     }
-
-
-
-
 }
