@@ -7,13 +7,14 @@
 import 数据结构.二叉树.二叉搜索树.BinarySearchTree;
 import 数据结构.链表.*;
 import 数据结构.图.TestListGraph;
+import 算法.Fibonacci;
 
 public class Main {
     public static void main(String[] args) {
-//        Fibonacci.TestFibonacci(46);
+        Fibonacci.TestFibonacci(46);
 //        SingleLinkedList.TestLinkedList();
 //        BinarySearchTree.TestBinarySearchTree();
 //        TestListGraph.testDirectionListGraph();
-        TestListGraph.texstMst();
+//        TestListGraph.texstMst();
     }
 }
